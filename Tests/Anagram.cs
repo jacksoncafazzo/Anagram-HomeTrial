@@ -34,13 +34,21 @@ namespace AnagramDetector
     public bool IsAnagram()
     {
       string word = this.GetWord();
-      string[] wordArray = word.Split();
-      Array.Sort<string>(wordArray);
+      char[] wordArray = word.ToCharArray();
+      Array.Sort(wordArray);
+      for (int j = 0; j < wordArray.Length; j++)
+      {
+        Console.WriteLine(wordArray[j]);
+      }
+
+
+
+
       List<string> anagrams = Anagram.GetAnagrams();
       foreach (string anagram in anagrams)
       {
-        string[] anagramArray = anagram.Split();
-        Array.Sort<string>(anagramArray);
+        char[] anagramArray = anagram.ToCharArray();
+        Array.Sort(anagramArray);
         for (int i = 0; i < anagramArray.Length; i++)
         {
           if (wordArray[i] == anagramArray[i])
