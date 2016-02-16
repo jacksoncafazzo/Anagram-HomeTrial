@@ -26,23 +26,25 @@ namespace AnagramDetector
     {
       return _anagramAttempts;
     }
+    public static void ClearAllChoices()
+    {
+      _anagramAttempts.Clear();
+    }
+    public static void ClearAllAnagrams()
+    {
+      _anagrams.Clear();
+    }
     public static void AddAnagram(string anagram)
     {
       _anagrams.Add(anagram);
     }
+
 
     public bool IsAnagram()
     {
       string word = this.GetWord();
       char[] wordArray = word.ToCharArray();
       Array.Sort(wordArray);
-      for (int j = 0; j < wordArray.Length; j++)
-      {
-        Console.WriteLine(wordArray[j]);
-      }
-
-
-
 
       List<string> anagrams = Anagram.GetAnagrams();
       foreach (string anagram in anagrams)
