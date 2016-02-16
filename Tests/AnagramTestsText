@@ -1,0 +1,5 @@
+user inputs a word, gets a char array ---**
+user inputs list of words that may be anagrams
+we check each user anagram input if it is made up of the same letters as their word.
+  get anagram, split it
+Return boolean, show list with only anagrams and eventually show them highlighted.
